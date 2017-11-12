@@ -14,6 +14,12 @@ import java.util.Scanner;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/***
+ * Class responsible for indexing content.
+ * Initially it only indexes zipped TXT files with a hardcoded location (/resources/movies.zip)
+ * @author lmonteir
+ *
+ */
 public class Indexer {
 	
 	private HashMap<String, ArrayList<String>> index;
@@ -81,24 +87,25 @@ public class Indexer {
 		ZipEntry entry = null;
 		while ((entry = zis.getNextEntry()) != null) {
 			if (!entry.isDirectory()) {
-				String filename = entry.getName();
+				String filename = entry.getName().toLowerCase();
+				if(filename.endsWith("txt")) {
+					// content processing
+					String content = getContent(zis);
+					content = vectorizer.normalize(content);
+					content = vectorizer.tokenize(content);
 
-				// content processing
-				String content = getContent(zis);
-				content = vectorizer.normalize(content);
-				content = vectorizer.tokenize(content);
+					// vectorizing
+					String[] vector = vectorizer.getVector(content);
 
-				// vectorizing
-				String[] vector = vectorizer.getVector(content);
+					// index
+					for (String word : vector) {
+						if (!index.containsKey(word))
+							index.put(word, new ArrayList<>());
 
-				// index
-				for (String word : vector) {
-					if (!index.containsKey(word))
-						index.put(word, new ArrayList<>());
-
-					index.get(word).add(filename);
+						index.get(word).add(filename);
+					}	
 				}
-
+				
 			}
 		}
 

@@ -5,17 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class VectorizerTest {
-	/*@Test
-	void testRun() {
-		Indexer i = new Indexer();
-		try {
-			i.Run();
-			assertTrue(true);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}*/
-	
 	@Test
 	void testTokenize() {
 		Vectorizer v = Vectorizer.getInstance();
