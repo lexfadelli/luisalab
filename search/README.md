@@ -16,8 +16,13 @@ Maven 3.5.2
 mvn package
 ```
 
-3. No diretório target executar o comando: 
-	java -jar search-0.0.1-SNAPSHOT-jar-with-dependencies.jar <caminho para arquivo zip> "<termos de busca>"
+3. No diretório target executar o comando:
+
+```
+java -jar search-0.0.1-SNAPSHOT-jar-with-dependencies.jar <caminho para arquivo zip> "<termos de busca>"
+```
+
+Exemplo:
 
 ```
 \target> java -jar search-0.0.1-SNAPSHOT-jar-with-dependencies.jar ..\etc\movies.zip "walt disney"
