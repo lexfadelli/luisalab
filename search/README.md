@@ -12,45 +12,12 @@ Java 1.8
 
 ### Instalação
 
-A step by step series of examples that tell you have to get a development env running
+1. Obter o projeto GIT
+2. Executar no diretório /dist o comando: java -jar search.jar "termo de busca"
 
-Say what the step will be
+## Execução dos Testes
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+1. Em desenvolvimento
 
 ## Autores
 
