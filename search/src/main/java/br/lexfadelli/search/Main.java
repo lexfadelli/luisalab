@@ -13,12 +13,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		String queryTerm = null;
-		
-		if(args.length != 1) {
-			System.out.println("Invalid query parameters!");
+		String zipFile = null;
+		if(args.length != 2) {
+			System.out.println("Invalid query parameters! Expected <zipfile> <query>");
 			System.exit(-1);
 		} else {
-			queryTerm = args[0];
+			zipFile = args[0];
+			queryTerm = args[1];
 		}
 		
 		//index the zip file contents
@@ -26,7 +27,7 @@ public class Main {
 		long indexStartTime = System.nanoTime();    
 		Indexer indexer = new Indexer();
 		try {
-			indexer.Run();
+			indexer.Run(zipFile);
 		} catch (IOException e) {
 			System.out.print("Failed to run indexer!");
 			e.printStackTrace();

@@ -23,7 +23,6 @@ import java.util.zip.ZipInputStream;
 public class Indexer {
 	
 	private HashMap<String, ArrayList<String>> index;
-	private static final String FILE_TO_INDEX = "/resources/movies.zip";
 	private static final String INDEX_PATH = "src/resources/index.ser";
 
 	public Indexer() {
@@ -77,12 +76,17 @@ public class Indexer {
 		return this.index;
 	}
 
-	public void Run() throws IOException {
+	public void Run(String inputFile) throws IOException {
+
+		File f = new File(inputFile);
+		if(f.exists() && !f.isDirectory() && !f.getName().toLowerCase().endsWith("zip") ) {
+		    throw new IOException("Invalid file!");
+		}
+		
 		System.out.println("Indexing...");
 		
 		Vectorizer vectorizer = Vectorizer.getInstance();
-		
-		InputStream is = this.getClass().getResourceAsStream(FILE_TO_INDEX);
+		InputStream is = new FileInputStream(inputFile);
 		ZipInputStream zis = new ZipInputStream(is);
 		ZipEntry entry = null;
 		while ((entry = zis.getNextEntry()) != null) {

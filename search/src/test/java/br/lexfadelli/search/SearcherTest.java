@@ -8,10 +8,7 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
-@RunWith(JUnitPlatform.class)
 public class SearcherTest {
 	@Test
 	public void testSearch() {
