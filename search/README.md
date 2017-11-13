@@ -9,8 +9,14 @@ Solução do desafio de busca.
 
 ### Instalação
 
-1. Obter o projeto GIT
-2. Empacotar projeto através do comando:
+1. Obter projeto:
+
+```
+git clone https://github.com/lexfadelli/luisalab
+```
+
+2. Criar pacote.
+Navegar até a pasta do projeto e executar:
 
 ```
 mvn package
