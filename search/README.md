@@ -8,16 +8,24 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Pré-requisitos
 
-Java 1.8
+Java JDK 1.8
+Maven 3.5.2
 
 ### Instalação
 
 1. Obter o projeto GIT
-2. Executar no diretório /dist o comando: java -jar search.jar "termo de busca"
+2. Empacotar projeto através do comando: 
+	mvn package
+3. No diretório target executar o comando: 
+	java -jar search-0.0.1-SNAPSHOT-jar-with-dependencies.jar <caminho para arquivo zip> "<termos de busca>"
+
+```
+\target> java -jar search-0.0.1-SNAPSHOT-jar-with-dependencies.jar ..\etc\movies.zip "walt disney"
+```
 
 ## Execução dos Testes
 
-1. Em desenvolvimento
+mvn test
 
 ## Autores
 
