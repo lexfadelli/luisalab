@@ -16,7 +16,7 @@ import java.util.zip.ZipInputStream;
 
 /***
  * Class responsible for indexing content.
- * Initially it only indexes zipped TXT files with a hardcoded location (/resources/movies.zip)
+ * Initially it only indexes zipped TXT files
  * @author lmonteir
  *
  */
