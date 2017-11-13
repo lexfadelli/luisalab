@@ -4,8 +4,8 @@ Solução do desafio de busca.
 
 ### Pré-requisitos
 
-Java JDK 1.8
-Maven 3.5.2
+* Java JDK 1.8
+* Maven 3.5.2
 
 ### Instalação
 
