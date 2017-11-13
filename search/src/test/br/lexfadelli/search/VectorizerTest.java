@@ -3,10 +3,13 @@ package br.lexfadelli.search;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-class VectorizerTest {
+@RunWith(JUnitPlatform.class)
+public class VectorizerTest {
 	@Test
-	void testTokenize() {
+	public void testTokenize() {
 		Vectorizer v = Vectorizer.getInstance();
 		String actual = v.tokenize("Av. Paes de Barros, 1915 - apto 1 / Mooca \\ SP");
 		String expected = "Av Paes de Barros 1915 apto 1 Mooca SP";
@@ -19,14 +22,14 @@ class VectorizerTest {
 	}
 	
 	@Test
-	void testNormalize() {
+	public void testNormalize() {
 		Vectorizer v = Vectorizer.getInstance();
 		String actual = v.normalize("José Assunção de Oliveira");
 		assertEquals("jose assuncao de oliveira", actual);
 	}
 	
 	@Test
-	void testGetVector() {
+	public void testGetVector() {
 		Vectorizer v = Vectorizer.getInstance();
 		String[] actual = v.getVector("bruce willis bruce wayne");
 		assertEquals(3, actual.length);

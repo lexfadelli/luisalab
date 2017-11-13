@@ -8,10 +8,13 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-class SearcherTest {
+@RunWith(JUnitPlatform.class)
+public class SearcherTest {
 	@Test
-	void testSearch() {
+	public void testSearch() {
 		HashMap<String, ArrayList<String>> index = new HashMap<String, ArrayList<String>>();
 		
 		Collection<String> col1 = Arrays.asList("1", "2");
